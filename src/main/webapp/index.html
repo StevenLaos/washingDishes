@@ -2,36 +2,19 @@
     <head>
     </head>
     <body>
-        <p>This thing is going to calculate your washer's work and how much clean dishes you would get</p>
+        <p>This thing is going to calculate your washer's work. How meny dishes he is capable to wash with liquid you give.</p>
         Enter how meny dishes you wanna wash: <input id = "dishes" />.
-        Enter your washing liquid amount: <input id = "liquid" />. <br>
-        Pick a worker:  <select id = "dishWasher"><option value = "id"></option></select>. <br><br>
+        Enter your washing liquid amount: <input id = "liquid" />ml. <br>
+        Pick a worker:  <select id = "dishWasher"><option value = "dishWasher"></option></select>. <br><br>
         <button id = "wash">Wash the dishes</button> <br><br>
         <p id = "answer"></p>
     </body>
-    <script scr="GetWorkerInfo.js">
+    <script src="GetWorkerInfo.js">    /*scr="Test.js"*/
         const myButton = document.getElementById("wash")
             myButton.addEventListener("click", washing)
-        //Vaja kätte saada kuidagi data. Selle jaoks vaja leida võimalus kuidas seda teha.
 
-        getWorkers(getAllWorkers())
-        function getWorkers(allWorkers){
-            let workerList = ""
-            for(let i = 0 ; i< allWorkers.length; i++) {
-                workerList += `$<select><option>{allWorkers[i].firstName} ${allWorkers[i].lastName}</option></select>`
-            }
-            return document.getElementById("dishWasher").innerHTML = workerList
-        }
 //        function howMuchUsed(){
 //            return document.getElementById("answer").innerHTML = `For washing the dishes the worker used ${}ml and washed ${} dishes.`
 //        }
     </script>
 </html>
-
-<!--See on näiteks selecti kohta lisaks. kui algul aru ei saa. Vaata ja mõtle siit välja või uuri html formside alt -->
-<!--<select name="cars">-->
-    <!--<option value="volvo">Volvo</option>-->
-    <!--<option value="saab">Saab</option>-->
-    <!--<option value="fiat" selected>Fiat</option>-->
-    <!--<option value="audi">Audi</option>-->
-<!--</select>-->

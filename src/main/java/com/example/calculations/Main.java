@@ -3,7 +3,7 @@ package com.example.calculations;
 /**
  * Created by User on 6/16/2017.
  */
-public class Main {
+/*public class Main {
     public static void main(String[] args){
         int MaxDishWash = worker(efficiency) * liquid;
         if(dishes < MaxDishWash){
@@ -18,7 +18,7 @@ public class Main {
         }
 
     }
-}
+}*/
 //    function washing(dishes, liquid, worker){
 //            const dishes = document.getElementById("dishes").value
 //            const liquid = document.getElementById("liquid").value
