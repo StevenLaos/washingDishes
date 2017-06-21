@@ -20,3 +20,26 @@ function getAllWorkers() {
     })
 }
 getAllWorkers()
+
+function rdyToWash() {
+    const dishAmount = document.getElementById('dishes')
+    const liquidAmount = document.getElementById('liquid')
+    const workerWork = document.getElementById('dishWasher')
+    const url = ''      //Think about what address or place you want it to show
+    fetch(url, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            dishAmount,
+            liquidAmount,
+            workerWork,
+        }).then((response) => response.json()
+        ).then(function (data) {
+            console.log(data)
+        })
+    })
+
+}
+rdyToWash()
