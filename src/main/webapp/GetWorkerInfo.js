@@ -35,10 +35,10 @@ function rdyToWash() {
             dishAmount,
             liquidAmount,
             workerWork,
-        }).then((response) => response.json()
-        ).then(function (data) {
-            console.log(data)
         })
+    }).then((response) => response.json()
+    ).then(function (data) {
+        console.log(data)
     })
 
 }
