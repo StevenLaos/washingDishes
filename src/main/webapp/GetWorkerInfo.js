@@ -16,7 +16,6 @@ function getAllWorkers() {
             workerList += `<select><option>${data[i].firstName} ${data[i].lastName}</option></select>`
         }
         return ul.innerHTML = workerList
-
     })
 }
 getAllWorkers()
@@ -25,7 +24,7 @@ function rdyToWash() {
     const dishAmount = document.getElementById('dishes')
     const liquidAmount = document.getElementById('liquid')
     const workerWork = document.getElementById('dishWasher')
-    const url = ''      //Think about what address or place you want it to show
+    const url = 'localhost:9000/rest/washer'      //Aadress peaks õige olema.
     fetch(url, {
         method: 'post',
         headers: {
@@ -43,3 +42,18 @@ function rdyToWash() {
 
 }
 rdyToWash()
+
+function answerSentence() {
+    const ul = document.getElementById("answer")
+    const url = ''
+    fetch(url, {
+        method: 'get',
+        headers: {
+            'Content-type': 'application/json'
+        },
+    }).then((response) => response.json()
+    ).then(function (answer) {
+
+        return ul.innerHTML = `testTEST tekst`; //Mõelda välja funktsioon ja sisestada siis vastus
+    })
+}
