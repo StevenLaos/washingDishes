@@ -4,16 +4,15 @@
     </head>
     <body>
         <p>This thing is going to calculate your washer's work. How many dishes he is capable to wash with liquid you give.</p>
-        Enter how many dishes you wanna wash: <input id = "dishes" />.
-        Enter your washing liquid amount: <input id = "liquid" />ml. <br>
-        Pick a worker:  <select id = "dishWasher"><option value = "dishWasher"></option></select>. <br><br>
+        Enter how many dishes you wanna wash: <input id = "dishes">.
+        Enter your washing liquid amount: <input id = "liquid">ml. <br>
+        Pick a worker:  <select id = "dishWasher"></select>. <br><br>
         <button id = "wash">Wash the dishes</button> <br><br>
         <p id = "answer"></p>
     </body>
     <script src="GetWorkerInfo.js">    /*scr="Test.js"*/
         const myButton = document.getElementById("wash")
             myButton.addEventListener("click", rdyToWash)
-            myButton.addEventListener("click", answerSentence)
 
 //        function howMuchUsed(){
 //            return document.getElementById("answer").innerHTML = `For washing the dishes the worker used ${}ml and washed ${} dishes.`
