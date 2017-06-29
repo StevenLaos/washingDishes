@@ -5,20 +5,57 @@ package com.example.bean;
  */
 
 public class Washer {
-    //Vaja ära deklareerida paar muutujat, et kasutaja antud arvudega saaks tegeleda õigesti
 
+    private int liquidAmount;
+    private int dishAmount;
+    private String workerWork;
+
+    public Washer(){
+
+    }
+
+    public Washer(int liquidAmount, int dishes, String workerWork){
+        this.liquidAmount = liquidAmount;
+        this.dishAmount = dishes;
+        this.workerWork = workerWork;
+    }
+    //Vaja ära deklareerida paar muutujat, et kasutaja antud arvudega saaks tegeleda õigesti
     /*public static void main(String[] args){
-        int MaxDishWash = efficiency * liquid;
-        if(dishes < MaxDishWash){
-            int liquidLeftOver = MaxDishWash - dishes;
+        int MaxDishWash = efficiency * liquidAmount;
+        if(dishAmount < MaxDishWash){
+            int liquidLeftOver = MaxDishWash - dishAmount;
             double liquidInBottle = liquidLeftOver / efficiency;
-        }else if(dishes > MaxDishWash){
-            double dishesLeftOver = dishes - MaxDishWash;
-        }else if(dishes == MaxDishWash){
+        }else if(dishAmount > MaxDishWash){
+            double dishesLeftOver = dishAmount - MaxDishWash;
+        }else if(dishAmount == MaxDishWash){
             "all used for washing";
         }else{
             "something went wrong";
         }
 
     }*/
+    public int getLiquidAmount() {
+        return liquidAmount;
+    }
+
+    public void setLiquidAmount(int liquidAmount) {
+        this.liquidAmount = liquidAmount;
+    }
+
+    public int getDishAmount() {
+        return dishAmount;
+    }
+
+    public void setDishAmount(int dishAmount) {
+        this.dishAmount = dishAmount;
+    }
+    public String getWorkerWork() {
+        return workerWork;
+    }
+
+    public void setWorkerWork(String workerWork) {
+        this.workerWork = workerWork;
+    }
+
 }
+

@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.bean.Worker;
+import com.example.bean.Washer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -28,6 +29,10 @@ public class WorkerService {
         }
         DBConnection.closeConnection(connection);
         return listOfWorkers;
+    }
+    public Washer findWorkerEfficieny(Worker worker, Washer washer){
+       washer.getWorkerWork().equals(worker.getFirstName() + worker.getLastName());
+       return worker.getEfficiency();
     }
 
     public Worker addNewWorker(Worker worker) {

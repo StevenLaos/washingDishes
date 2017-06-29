@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.bean.Washer;
 
+
 import java.sql.*;
 
 /**
@@ -10,6 +11,7 @@ import java.sql.*;
 public class WasherService {
     public Washer rdyToWash(Washer washer){
         try{
+//           Vaja välja mõelda mida ma siin sees teen
             Connection connection = DBConnection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(""); //vaja täita sisuga, kui seda on üldse vaja
             preparedStatement.setInt(1, 21);//Algselt lihtsalt täidetud, et punast ei näitaks. Vaja täita õige sisuga

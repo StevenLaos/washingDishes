@@ -43,7 +43,6 @@ function rdyToWash() {
         })
 }
 
-
 /*
  function answerSentence() {
  const text = document.getElementById("answer")

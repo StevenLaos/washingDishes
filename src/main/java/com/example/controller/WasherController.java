@@ -15,8 +15,10 @@ public class WasherController {
     WasherService washerService = new WasherService();
 
 
-    //peaks minema localhost:9000/rest/washer. Kas suunan mujale ?
+//    Kuidas ma pean nimetama ja kuidas ma saan nii teha, et WasherService kasutab worker-it kui ka washer java-t.
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Washer rdyToWash(Washer washer){return washerService.rdyToWash(washer);}
+    public Washer rdyToWash(Washer washer) {
+        return washerService.rdyToWash(washer);
+    }
 }
