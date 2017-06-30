@@ -30,9 +30,21 @@ public class WorkerService {
         DBConnection.closeConnection(connection);
         return listOfWorkers;
     }
-    public Washer findWorkerEfficieny(Worker worker, Washer washer){
-       washer.getWorkerWork().equals(worker.getFirstName() + worker.getLastName());
-       return worker.getEfficiency();
+
+    public Washer findWorkerEfficieny(Worker worker, Washer washer) {
+        //vaja võtta kasutaja andmetest workerWork ehk nime ja siis vaja võtta worker tabelist Ees ja pere nime.
+        //Ei tea kas see washer lause on õigesti kirjutatud.
+        washer.getWorkerWork().equals(worker.getFirstName() + worker.getLastName());
+        Connection connection = DBConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT efficency FROM worker");
+            //Mõelda välja kuidas seda sõnastada ja kaustada, et ta võtaks töökuses ja lasesk returnina tagastada.
+            preparedStatement.setInt(1, worker.getEfficiency());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        DBConnection.closeConnection(connection);
+        return efficiency;
     }
 
     public Worker addNewWorker(Worker worker) {
