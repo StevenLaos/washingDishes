@@ -14,11 +14,8 @@ public class WasherController {
 
     WasherService washerService = new WasherService();
 
-
-//    Kuidas ma pean nimetama ja kuidas ma saan nii teha, et WasherService kasutab worker-it kui ka washer java-t.
+    //Vaja on tekitada POST ja GET aga praegu nad on 1 funktsioonis ja ma ei saa aru kas see on õigesti tehtud.
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Washer rdyToWash(Washer washer) {
-        return washerService.rdyToWash(washer);
-    }
+    public Washer rdyToWash(Washer washer) {return washerService.rdyToWash(washer);}
 }

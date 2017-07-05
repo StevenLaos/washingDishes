@@ -1,7 +1,6 @@
 package com.example.service;
 
 import com.example.bean.Worker;
-import com.example.bean.Washer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -31,15 +30,15 @@ public class WorkerService {
         return listOfWorkers;
     }
 
-    public Washer findWorkerEfficieny(Worker worker, Washer washer) {
-        //vaja võtta kasutaja andmetest workerWork ehk nime ja siis vaja võtta worker tabelist Ees ja pere nime.
-        //Ei tea kas see washer lause on õigesti kirjutatud.
-        washer.getWorkerWork().equals(worker.getFirstName() + worker.getLastName());
+    public int findWorkerEfficieny(String washerFirstName, String washerLastName) {
+        int  efficiency = 0;
         Connection connection = DBConnection.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT efficency FROM worker");
-            //Mõelda välja kuidas seda sõnastada ja kaustada, et ta võtaks töökuses ja lasesk returnina tagastada.
-            preparedStatement.setInt(1, worker.getEfficiency());
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT efficiency FROM worker WHERE first_name = ? AND last_name = ?");
+            preparedStatement.setString(1, washerFirstName);
+            preparedStatement.setString(2, washerLastName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            efficiency = resultSet.getInt("efficiency");
         } catch (SQLException e) {
             e.printStackTrace();
         }

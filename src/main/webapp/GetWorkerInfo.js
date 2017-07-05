@@ -43,10 +43,10 @@ function rdyToWash() {
         })
 }
 
-/*
+
  function answerSentence() {
  const text = document.getElementById("answer")
- const url = ''
+ const url = 'http://localhost:9000/rest/washer'
  fetch(url, {
  method: 'get',
  headers: {
@@ -58,4 +58,4 @@ function rdyToWash() {
  return text.innerHTML = `testTEST tekst`; //textile parem nimi ja = märgi taha funktsiooni vastsus
  })
  }
- */
+
