@@ -24,31 +24,16 @@ public class Worker {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public int getEfficiency() {
         return efficiency;
     }
 
-    public void setEfficiency(int efficiency) {
-        this.efficiency = efficiency;
-    }
-
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 }

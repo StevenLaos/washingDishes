@@ -14,16 +14,16 @@ public class WasherService {
         String firstName = washerNames[0];
         String lastName = washerNames[1];
 
-        int efficiency = workerService.findWorkerEfficieny(firstName, lastName);
-        int liquidAmount = washer.getLiquidAmount();
-        int dishAmount = washer.getDishAmount();
-        int maxDishAmount = efficiency * liquidAmount;
+        double efficiency = workerService.findWorkerEfficieny(firstName, lastName);
+        double liquidAmount = washer.getLiquidAmount();
+        double dishAmount = washer.getDishAmount();
+        double maxDishAmount = efficiency * liquidAmount;
         if (dishAmount < maxDishAmount) {
-            int dishesLeft = maxDishAmount - dishAmount;
+            double dishesLeft = maxDishAmount - dishAmount;
             double liquidInBottle = dishesLeft / efficiency;
-            return "Worker washed all dishes and didn't use " + liquidInBottle + " ml of washing liquid.";
+            return "Worker washed all dishes and didn't use " + String.format("%.2f",liquidInBottle) + " ml of washing liquid.";
         } else if (dishAmount > maxDishAmount) {
-            int dishesLeftOver = dishAmount - maxDishAmount;
+            double dishesLeftOver = dishAmount - maxDishAmount;
             return "Worker used all liquid and needs to wash " + dishesLeftOver + " more dishes.";
         } else if (dishAmount == maxDishAmount) {
             return "All used for washing and all dishes are clean.";

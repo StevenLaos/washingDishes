@@ -24,25 +24,12 @@ public class Washer {
         return liquidAmount;
     }
 
-    public void setLiquidAmount(int liquidAmount) {
-        this.liquidAmount = liquidAmount;
-    }
-
     public int getDishAmount() {
         return dishAmount;
-    }
-
-    public void setDishAmount(int dishAmount) {
-        this.dishAmount = dishAmount;
     }
 
     public String getWorkerWork() {
         return workerWork;
     }
-
-    public void setWorkerWork(String workerWork) {
-        this.workerWork = workerWork;
-    }
-
 }
 
