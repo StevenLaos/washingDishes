@@ -1,17 +1,15 @@
 <html>
     <head>
-        <title>Washing dishAmount</title>
+        <title>Washing dishes</title>
     </head>
     <body>
-        <p>This thing is going to calculate your washer's work. How many dishAmount he is capable to wash with liquidAmount you give.</p>
-        Enter how many dishAmount you wanna wash: <input id = "dishAmount">.
-        Enter your washing liquidAmount amount: <input id = "liquidAmount">ml. <br>
+        <p>This calculator is going to calculate how many dishes your worker is capable to wash with given liquid.</p>
+        Enter how many dishes you want to wash: <input id = "dishes">.
+        Enter your washing liquid amount: <input id = "liquid"> ml. <br>
         Pick a worker:  <select id = "dishWasher"></select>. <br><br>
-        <button id = "wash">Wash the dishAmount</button> <br><br>
+        <button id="wash">Wash dishes</button> <br><br>
         <p id = "answer"></p>
     </body>
-    <script src="GetWorkerInfo.js">    /*scr="Test.js"*/
-        const myButton = document.getElementById("wash")
-            myButton.addEventListener("click", rdyToWash)
+    <script src="GetWorkerInfo.js">
     </script>
 </html>

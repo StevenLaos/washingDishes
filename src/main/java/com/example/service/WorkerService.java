@@ -10,6 +10,7 @@ import java.util.List;
  * Created by User on 6/15/2017.
  */
 public class WorkerService {
+
     public List<Worker> getAllWorkers() {
         List<Worker> listOfWorkers = new ArrayList<>();
         Connection connection = DBConnection.getConnection();
@@ -30,15 +31,17 @@ public class WorkerService {
         return listOfWorkers;
     }
 
-    public int findWorkerEfficieny(String washerFirstName, String washerLastName) {
+    public int findWorkerEfficieny(String firstName, String lastName) {
         int  efficiency = 0;
         Connection connection = DBConnection.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT efficiency FROM worker WHERE first_name = ? AND last_name = ?");
-            preparedStatement.setString(1, washerFirstName);
-            preparedStatement.setString(2, washerLastName);
+            preparedStatement.setString(1, firstName);
+            preparedStatement.setString(2, lastName);
             ResultSet resultSet = preparedStatement.executeQuery();
-            efficiency = resultSet.getInt("efficiency");
+            while (resultSet.next()) {
+                efficiency = resultSet.getInt("efficiency");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

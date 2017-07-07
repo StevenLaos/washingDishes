@@ -5,6 +5,7 @@ import com.example.service.WasherService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.HashMap;
 
 /**
  * Created by User on 6/26/2017.
@@ -12,10 +13,12 @@ import javax.ws.rs.core.MediaType;
 @Path("/washer")
 public class WasherController {
 
-    WasherService washerService = new WasherService();
+    private WasherService washerService = new WasherService();
 
-    //Vaja on tekitada POST ja GET aga praegu nad on 1 funktsioonis ja ma ei saa aru kas see on õigesti tehtud.
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Washer rdyToWash(Washer washer) {return washerService.rdyToWash(washer);}
+    public Object readyToWash(Washer washer) {
+        final String answer = washerService.readyToWash(washer);
+        return new HashMap<String, Object>() {{ put("answer", answer); }};
+    }
 }

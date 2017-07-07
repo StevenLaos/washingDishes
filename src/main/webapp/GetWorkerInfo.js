@@ -12,17 +12,19 @@ function getAllWorkers() {
     })
         .then((response) => response.json())
         .then(function (data) {
-            let workerList = ""
+            let washerList = ""
             for (let i = 0; i < data.length; i++) {
-                workerList += `<select><option>${data[i].firstName} ${data[i].lastName}</option></select>`
+                washerList += `<select><option>${data[i].firstName} ${data[i].lastName}</option></select>`
             }
-            listOfWorkers.innerHTML = workerList
+            listOfWorkers.innerHTML = washerList
         })
 }
 window.addEventListener('load', getAllWorkers)
 
-function rdyToWash() {
-    const dishAmount = document.getElementById('dishes').value
+document.getElementById("wash").addEventListener("click", readyToWash)
+
+function readyToWash() {
+    const dishAmount = document.getElementById("dishes").value
     const liquidAmount = document.getElementById('liquid').value
     const workerWork = document.getElementById('dishWasher').value
     const url = 'http://localhost:9000/rest/washer'
@@ -39,23 +41,7 @@ function rdyToWash() {
     })
         .then((response) => response.json())
         .then(function (data) {
-            console.log(data)
+
+            document.getElementById("answer").innerHTML = data.answer
         })
 }
-
-
- function answerSentence() {
- const text = document.getElementById("answer")
- const url = 'http://localhost:9000/rest/washer'
- fetch(url, {
- method: 'get',
- headers: {
- 'Content-type': 'application/json'
- },
- }).then((response) => response.json()
- ).then(function (answer) {
- //Mõelda välja funktsioon ja sisestada siis vastus
- return text.innerHTML = `testTEST tekst`; //textile parem nimi ja = märgi taha funktsiooni vastsus
- })
- }
-

@@ -2,8 +2,6 @@ package com.example.service;
 
 import com.example.bean.Washer;
 
-import java.sql.*;
-
 /**
  * Created by User on 6/26/2017.
  */
@@ -11,25 +9,25 @@ public class WasherService {
 
     WorkerService workerService = new WorkerService();
 
-    public String rdyToWash(Washer washer) {
+    public String readyToWash(Washer washer) {
         String[] washerNames = washer.getWorkerWork().split(" ");
-        String washerFirstName = washerNames[0];
-        String washerLastName = washerNames[1];
+        String firstName = washerNames[0];
+        String lastName = washerNames[1];
 
-        int efficiency = workerService.findWorkerEfficieny(washerFirstName, washerLastName);
+        int efficiency = workerService.findWorkerEfficieny(firstName, lastName);
         int liquidAmount = washer.getLiquidAmount();
         int dishAmount = washer.getDishAmount();
         int maxDishAmount = efficiency * liquidAmount;
-        if (dishAmount < maxDishAmount) {                      //dishesLeft on selleks, et arvutada pärast vedeliku,
-            int dishesLeft = maxDishAmount - dishAmount;   //mis jääb purki
+        if (dishAmount < maxDishAmount) {
+            int dishesLeft = maxDishAmount - dishAmount;
             double liquidInBottle = dishesLeft / efficiency;
-            return "You washed all dishes and you didn't use" + liquidInBottle + " ml of washing liquid.";
+            return "Worker washed all dishes and didn't use " + liquidInBottle + " ml of washing liquid.";
         } else if (dishAmount > maxDishAmount) {
             int dishesLeftOver = dishAmount - maxDishAmount;
-            return "You used all liquid and you need to wash " + dishesLeftOver + " more dishes";
+            return "Worker used all liquid and needs to wash " + dishesLeftOver + " more dishes.";
         } else if (dishAmount == maxDishAmount) {
-            return "all used for washing";
+            return "All used for washing and all dishes are clean.";
         }
-        return "something went wrong";
+        return "Something went wrong.";
     }
 }
