@@ -6,7 +6,7 @@ package com.example.bean;
 public class Worker {
     private String firstName;
     private String lastName;
-    private int efficiency; //Shows how much dishes you can wash with 1 ml.
+    private int efficiency; //Shows how much liquid you need to use for 1 dish.
     private int id;
 
     public Worker(){

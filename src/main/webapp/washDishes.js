@@ -20,13 +20,12 @@ function getAllWorkers() {
         })
 }
 window.addEventListener('load', getAllWorkers)
-
 document.getElementById("wash").addEventListener("click", readyToWash)
 
 function readyToWash() {
     const dishAmount = document.getElementById("dishes").value
     const liquidAmount = document.getElementById('liquid').value
-    const workerWork = document.getElementById('dishWasher').value
+    const workerName = document.getElementById('dishWasher').value
     const url = 'http://localhost:9000/rest/washer'
     fetch(url, {
         method: 'post',
@@ -36,12 +35,11 @@ function readyToWash() {
         body: JSON.stringify({
             dishAmount,
             liquidAmount,
-            workerWork,
+            workerName,
         })
     })
         .then((response) => response.json())
         .then(function (data) {
-
             document.getElementById("answer").innerHTML = data.answer
         })
 }

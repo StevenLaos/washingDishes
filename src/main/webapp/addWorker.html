@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add worker</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class= "header">
+                <nav>
+                    <ul>
+                        <li><a href="washDishes.html">Wash dishes</a></li>
+                        <li><a href="addWorker.html">Add new Worker</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class = "content">
+                <p>This page allows you to add new worker to worker select list. <br>
+                Efficiency shows how much liquid you need for 1 dish.</p>
+                Enter first name: <input id = "firstName"> <br>
+                Enter last name: <input id= "lastName"> <br>
+                Enter efficiency: <input id = "efficiency"> <br><br>
+                <button id= "addNewWorker">Add new worker</button> <br><br>
+                <p id = "response"></p>
+                <br><br><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Efficiency</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "workerDataTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script src = "addWorker.js">
+    </script>
+</html>

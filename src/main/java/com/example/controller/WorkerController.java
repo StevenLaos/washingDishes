@@ -30,7 +30,6 @@ public class WorkerController {
 
     @DELETE
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public void deleteWorker(@PathParam("id") int id) {
         workerService.deleteWorker(id);
     }

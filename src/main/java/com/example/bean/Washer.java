@@ -8,16 +8,16 @@ public class Washer {
 
     private int liquidAmount;
     private int dishAmount;
-    private String workerWork;
+    private String workerName;
 
     public Washer(){
 
     }
 
-    public Washer(int liquidAmount, int dishes, String workerWork){
+    public Washer(int liquidAmount, int dishes, String workerName){
         this.liquidAmount = liquidAmount;
         this.dishAmount = dishes;
-        this.workerWork = workerWork;
+        this.workerName = workerName;
     }
 
     public int getLiquidAmount() {
@@ -28,8 +28,8 @@ public class Washer {
         return dishAmount;
     }
 
-    public String getWorkerWork() {
-        return workerWork;
+    public String getWorkerName() {
+        return workerName;
     }
 }
 

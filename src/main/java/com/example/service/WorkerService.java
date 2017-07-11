@@ -12,6 +12,7 @@ import java.util.List;
 public class WorkerService {
 
     public List<Worker> getAllWorkers() {
+
         List<Worker> listOfWorkers = new ArrayList<>();
         Connection connection = DBConnection.getConnection();
         try (Statement statement = connection.createStatement();
@@ -88,4 +89,5 @@ public class WorkerService {
         }
         return worker;
     }
+
 }
