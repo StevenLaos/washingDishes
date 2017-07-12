@@ -32,7 +32,7 @@ public class WorkerService {
         return listOfWorkers;
     }
 
-    public int findWorkerEfficieny(String firstName, String lastName) {
+    public int findWorkerEfficiency(String firstName, String lastName) {
         int  efficiency = 0;
         Connection connection = DBConnection.getConnection();
         try {

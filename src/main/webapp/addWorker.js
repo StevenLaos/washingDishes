@@ -2,7 +2,6 @@
  * Created by User on 7/10/2017.
  */
 document.getElementById("addNewWorker").addEventListener("click", addWorker)
-
 function addWorker(){
     const firstName = document.getElementById("firstName").value
     const lastName = document.getElementById("lastName").value
@@ -19,11 +18,13 @@ function addWorker(){
             efficiency,
         })
     })
-        //.then((response) => response.json())
-/*        .then(function (data){
+        .then(clearFields())
+}
 
-            return data
-        })*/
+function clearFields(){
+    document.getElementById("firstName").value = ""
+    document.getElementById("lastName").value = ""
+    document.getElementById("efficiency").value = ""
 }
 
 function showWorkerTable(){

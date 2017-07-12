@@ -13,7 +13,7 @@ public class WasherService {
         String[] washerNames = washer.getWorkerName().split(" ");
         String firstName = washerNames[0];
         String lastName = washerNames[1];
-        double efficiency = workerService.findWorkerEfficieny(firstName, lastName);
+        double efficiency = workerService.findWorkerEfficiency(firstName, lastName);
         double liquid = washer.getLiquidAmount();
         double dishes = washer.getDishAmount();
         double maxDishes = liquid / efficiency;
