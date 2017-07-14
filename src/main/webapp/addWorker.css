@@ -1,40 +1,88 @@
 body{
     background-color: rgb(168, 249, 183);
+    font-family: Arial, Times New Roman, sans-serif;
 }
 a{
     text-decoration: none;
 }
-ul{
-    text-align: center;
+#container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+
+/***** header *****/
+
+#header{
+    padding: 10px;
+}
+#header ul{
+    border: hidden;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: hidden;
+    text-align: center;
 }
-li{
+#header li{
     float: left;
 }
-li a{
+#header li a{
+    background-color: rgb(0, 206, 255);
     border-style: groove;
     display: block;
     padding: 10px;
-    background-color: rgb(0, 206, 255);
+    text-align: center;
 }
-input{
-    background-color: aqua;
-}
-table, th, td{
-    border-style: groove;
-    background-color: aqua;
-}
-button{
-    background-color: aqua;
-    color: black;
-    padding: 10px 24px;
-    border-radius: 12px;
-}
-li :hover, button:hover{
+#header li a:hover{
     background-color: seagreen;
     color: black;
+}
+#header .selected{
+    font-weight: bold;
+}
+
+#content{
+    padding: 20px;
+}
+
+/***** main content ******/
+
+#main{
+    float:left;
+    width: 440px;
+}
+#main input, button{
+    background-color: aqua;
+}
+#main input:focus{
+    background-color: seagreen;
+}
+#main button{
+    border-radius: 12px;
+    color: black;
+    padding: 10px 24px;
+}
+#main button:hover{
+    background-color: seagreen;
+    color: black;
+}
+
+/***** table content*****/
+
+#table{
+    float:left;
+    width: 420px;
+}
+#table table, th, td{
+    background-color: aqua;
+    border-style: groove;
+}
+
+/**** footer*****/
+
+#footer{
+    clear: both;
+    padding: 10px;
+    text-align:right;
 }

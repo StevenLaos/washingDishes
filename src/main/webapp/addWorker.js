@@ -1,6 +1,16 @@
 /**
  * Created by User on 7/10/2017.
  */
+document.getElementById("addNewWorker").addEventListener("click", checkIfEmpty)
+function checkIfEmpty(){
+    if(document.getElementById("main")[0],[1],[2].checkValidity()){
+        document.getElementById("infoAfterClick").innerHTML = "Added new worker"
+    }
+    else{
+       document.getElementById("infoAfterClick").innerHTML = "You missed something. Have a another go."
+    }
+}
+
 document.getElementById("addNewWorker").addEventListener("click", addWorker)
 function addWorker(){
     const firstName = document.getElementById("firstName").value

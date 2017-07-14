@@ -30,27 +30,3 @@ public class WasherService {
         return "Something went Wrong";
     }
 }
-        /*double maxDishAmount = efficiency * liquid;
-        if (dishes < maxDishAmount) {
-            double dishesLeft = maxDishAmount - dishAmount;
-            double liquidInBottle = dishesLeft / efficiency;
-            return "Worker washed all dishes and didn't use " + String.format("%.2f",liquidInBottle) + " ml of washing liquid.";
-        } else if (dishes > maxDishAmount) {
-            double dishesLeftOver = dishAmount - maxDishAmount;
-            return "Worker used all liquid and needs to wash " + dishesLeftOver + " more dishes.";
-        } else if (dishes == maxDishAmount) {
-            return "All used for washing and all dishes are clean.";
-        }
-        return "Something went wrong."; */
-       /*double maxLiquid = efficiency * dishes;
-        if (liquid > maxLiquid) {
-                double liquidLeft = liquid - maxLiquid;
-                return "Worker washed all dishes and didn't use " + liquidLeft + " liquid.";
-                }else if(liquid < maxLiquid){
-        double dishesLeft = maxLiquid - liquid;
-        double dishesLeftInRow = dishesLeft / efficiency;
-        return "Worker used all liquid and didn't wash " + String.format("%.0f",dishesLeftInRow) + " dishes.";
-        }else if (liquid == maxLiquid) {
-        return "All used for washing and all dishes are clean.";
-        }
-        return "Something went Wrong";*/

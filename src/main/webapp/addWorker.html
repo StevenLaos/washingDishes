@@ -5,36 +5,44 @@
         <link rel = "stylesheet" href = "addWorker.css" type = "text/css"/>
     </head>
     <body>
-        <div class="container">
-            <div class= "header">
-                <nav>
+        <div id = "container">
+            <div id = "header">
                     <ul>
                         <li><a href="washDishes.html">Wash dishes</a></li>
-                        <li><a href="addWorker.html">Add new Worker</a></li>
+                        <li><a class= "selected" href="addWorker.html">Add new Worker</a></li>
                     </ul>
-                </nav>
             </div>
-            <div class = "content">
-                <p>This page allows you to add new worker to worker select list. <br>
-                Efficiency shows how much liquid you need for 1 dish.</p>
-                Enter first name: <input id = "firstName" placeholder="First name"> <br>
-                Enter last name: <input id= "lastName" placeholder="Last name"> <br>
-                Enter efficiency: <input id = "efficiency" placeholder="Efficiency"> <br><br>
-                <button id= "addNewWorker" >Add new worker</button> <br><br>
-                <p id = "response"></p>
-                <br><br><br>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Efficiency</th>
-                            <th>ID</th>
-                        </tr>
-                    </thead>
-                    <tbody id = "workerDataTable">
-                    </tbody>
-                </table>
+            <div id = "content">
+                <div id = "main">
+                        <p>This page allows you to add new worker to worker select list. <br>
+                        Efficiency shows how much liquid you need for 1 dish.</p>
+                    <form>
+                        Enter first name: <input type = "text" id = "firstName" placeholder = "First name" value = "" required> <br>
+                        Enter last name: <input type = "text" id= "lastName" placeholder = "Last name" value = "" required> <br>
+                        Enter efficiency: <input type = "number" id = "efficiency" placeholder = "Efficiency" value = "" min="0" required> <br><br>
+                        <button type  = "submit" id= "addNewWorker">Add new worker</button> <br><br>
+                        <p id = "infoAfterClick"></p>
+                        <p id = "response"></p>
+                        <br><br><br>
+                    </form>
+                </div>
+                <div id = "table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Efficiency</th>
+                                <th>ID</th>
+                            </tr>
+                        </thead>
+                        <tbody id = "workerDataTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id = "footer">
+                Copyright &copy; 2017 Steven Laos.
             </div>
         </div>
     </body>
